@@ -1,49 +1,715 @@
+/*
+  globals.css — Movement Pepperdine brand overrides.
+  Base styles come from /app-styles.css (loaded in layout.tsx).
+*/
+
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+body { margin: 0; padding: 0; }
+
+/* ══ DARK MODE (default) ══ */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #0B0014;
+  --bg-secondary: #0E0E1A;
+  --surface: rgba(255,255,255,0.05);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255,255,255,0.65);
+  --text-muted: #9CA3AF;
+  --border: rgba(255,255,255,0.1);
+  --card-bg: rgba(255,255,255,0.04);
+  --nav-bg: rgba(10, 0, 30, 0.80);
+  --footer-bg: #08001A;
+  --shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+/* ══ LIGHT MODE — override template's core variables ══ */
+[data-theme="light"] {
+  --bg-primary: #f2f3f8;
+  --bg-secondary: #ffffff;
+  --surface: rgba(0,0,0,0.04);
+  --text-primary: #0f0f1a;
+  --text-secondary: rgba(0,0,0,0.6);
+  --text-muted: #6B7280;
+  --border: rgba(0,0,0,0.1);
+  --card-bg: #ffffff;
+  --nav-bg: rgba(245, 245, 250, 0.88);
+  --footer-bg: #f0f0f8;
+  --shadow: 0 8px 40px rgba(0,0,0,0.12);
+
+  /* ⬇ These are the template's own core variables — overriding them fixes everything */
+  --primary: #0f0f1a !important;
+  --secondary: #f2f3f8 !important;
+  --text-color: rgba(0,0,0,0.6) !important;
+  --text-color-2: #0f0f1a !important;
+  --accent-color-3: #e8e8f0 !important;
+  --accent-color-4: #f2f3f8 !important;
+  --accent-color-5: rgba(0,0,0,0.08) !important;
+
+  color-scheme: light;
+}
+
+/* Force body background and text in light mode */
+[data-theme="light"] body {
+  background-color: #f2f3f8 !important;
+  color: #0f0f1a !important;
+}
+
+/* Force all sections */
+[data-theme="light"] .section,
+[data-theme="light"] .section-banner,
+[data-theme="light"] .section-404,
+[data-theme="light"] .section-partner,
+[data-theme="light"] .section-guide,
+[data-theme="light"] .section-footer {
+  background-color: #f2f3f8 !important;
+  color: #0f0f1a !important;
+}
+
+/* Cards in light mode */
+[data-theme="light"] .card,
+[data-theme="light"] .card-service,
+[data-theme="light"] .card-partner,
+[data-theme="light"] .card-blog {
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  color: #0f0f1a !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+}
+
+/* Headings */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] .banner-content-text,
+[data-theme="light"] .banner-heading-text,
+[data-theme="light"] .hero-heading {
+  color: #0f0f1a !important;
+  -webkit-text-fill-color: #0f0f1a !important;
+}
+
+/* title-heading gradient — override template's white gradient with dark version in light mode */
+[data-theme="light"] .title-heading,
+[data-theme="light"] .title-heading-banner {
+  background-image: linear-gradient(284deg, rgba(0,0,0,0.25) 3%, #0f0f1a 100%) !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+
+/* Paragraphs and text */
+[data-theme="light"] p,
+[data-theme="light"] .text-color {
+  color: rgba(0,0,0,0.65) !important;
+}
+
+/* Nav links */
+[data-theme="light"] .nav-link {
+  color: rgba(0,0,0,0.7) !important;
+}
+[data-theme="light"] .nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Navbar bg pill */
+[data-theme="light"] .navbar-wrapper nav {
+  background: rgba(245,245,252,0.9) !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+
+/* Footer — force all child elements to have transparent background
+   so template CSS (which applies var(--secondary) to some elements)
+   cannot bleed a white/light box into the footer */
+footer div,
+footer p,
+footer ul,
+footer li,
+footer h6 {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Light mode footer text */
+[data-theme="light"] footer {
+  background: #eeeef8 !important;
+}
+[data-theme="light"] footer p,
+[data-theme="light"] footer span,
+[data-theme="light"] footer a {
+  color: rgba(0,0,0,0.6) !important;
+}
+[data-theme="light"] footer h6 {
+  color: #0f0f1a !important;
+}
+
+/* Dark mode footer text */
+[data-theme="dark"] footer {
+  background: #08001A !important;
+}
+[data-theme="dark"] footer p,
+[data-theme="dark"] footer span {
+  color: #9CA3AF !important;
+}
+[data-theme="dark"] footer h6 {
+  color: #ffffff !important;
+}
+
+
+
+/* ══════════════════════════════════════════════════════════
+   SIMPLE SCROLL-REVEAL ANIMATION SYSTEM
+   ── No GSAP. No template JS. Pure CSS + IntersectionObserver.
+   ══════════════════════════════════════════════════════════ */
+
+/* Start: hidden + shifted down */
+.animate-box,
+[data-gsap],
+[data-animate] {
+  opacity: 0 !important;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Revealed: IntersectionObserver adds .in-view */
+.animate-box.in-view,
+[data-gsap].in-view,
+[data-animate].in-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger children for cascading effect */
+.animate-box:nth-child(2), [data-gsap]:nth-child(2) { transition-delay: 0.08s; }
+.animate-box:nth-child(3), [data-gsap]:nth-child(3) { transition-delay: 0.16s; }
+.animate-box:nth-child(4), [data-gsap]:nth-child(4) { transition-delay: 0.24s; }
+.animate-box:nth-child(5), [data-gsap]:nth-child(5) { transition-delay: 0.32s; }
+.animate-box:nth-child(6), [data-gsap]:nth-child(6) { transition-delay: 0.40s; }
+
+/* Safety net: if JS never loads, force-reveal after 3s via CSS animation */
+@keyframes safetyReveal {
+  to { opacity: 1 !important; transform: none !important; }
+}
+.animate-box, [data-gsap], [data-animate] {
+  animation: safetyReveal 0.01s 3s both;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BRAND GRADIENT PALETTE
+   Sourced from user-provided swatch:
+   orange-red → crimson → magenta → deep violet
+   ══════════════════════════════════════════════════════════ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Mid-point solid color for text/borders where gradients can't apply */
+  --accent-color: #E0106E;
+  --accent-color-6: #E0106E85;
+
+  /* The full gradient */
+  --brand-gradient: linear-gradient(135deg,
+    #FF6200 0%,
+    #FF1045 28%,
+    #E0106E 55%,
+    #8B12DF 100%
+  );
+
+  /* Softer diagonal for glow/radial fakes */
+  --brand-gradient-radial: radial-gradient(circle at 30% 70%,
+    #FF6200 0%,
+    #FF1045 30%,
+    #E0106E 60%,
+    #8B12DF 100%
+  );
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Navbar: brand logo circle + active link ── */
+.nav-icon-wrapper,
+.nav-icon-container {
+  background: var(--brand-gradient) !important;
+}
+
+/* ── Buttons: .btn-accent arrow circle ── */
+.icon-circle {
+  background: var(--brand-gradient) !important;
+  border: none !important;
+}
+
+/* ── CTA pill button ("Free to Join" / "Join as Student") ── */
+.nav-btn {
+  background: var(--brand-gradient) !important;
+  border: none !important;
+}
+
+/* ── Play / video loader button on hover ── */
+.request-loader:hover {
+  background: var(--brand-gradient) !important;
+}
+
+/* ── Close btn (mobile nav) ── */
+.close-btn {
+  background: var(--brand-gradient) !important;
+  border: none !important;
+}
+
+/* ── Banner glow: dark mode only ── */
+[data-theme="dark"] .section-banner::before,
+[data-theme="dark"] .banner-glow {
+  background-image: linear-gradient(180deg, #E0106E 0%, transparent 100%) !important;
+}
+[data-theme="light"] .section-banner::before,
+[data-theme="light"] .banner-glow {
+  background-image: none !important;
+}
+
+/* ── Hero radial glow ── */
+.hero-glow,
+.section-hero-glow {
+  background-image: var(--brand-gradient-radial) !important;
+}
+
+/* ── Partner card radial glow ── */
+.card-partner::before,
+.card-partner .partner-glow {
+  background-image: var(--brand-gradient-radial) !important;
+}
+
+/* ── Play button (always gradient) ── */
+.request-loader {
+  background: var(--brand-gradient) !important;
+  border: none !important;
+}
+
+/* ── Accent ICONS — gradient background clip for FA icons ── */
+.accent-color,
+.sub-heading i,
+.link-wrapper i,
+.card-chooseus .card-icon i,
+.fa-circle-check,
+i.fa-circle-check {
+  background: var(--brand-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ── Sub-heading text (the small label above section titles) ── */
+.sub-heading span,
+.sub-heading {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* Keep the icon inside sub-heading from double-applying */
+.sub-heading i {
+  display: inline-block;
+}
+
+/* ── Card chooseus icon wrapper ── */
+.card-chooseus .card-icon {
+  background: var(--brand-gradient) !important;
+}
+
+/* ── Card borders — gradient border via outline trick ── */
+.card-chooseus,
+.card-expertise {
+  border: 1px solid rgba(224,16,110,0.15) !important;
+  background: linear-gradient(135deg, rgba(255,98,0,0.06) 0%, rgba(139,18,223,0.06) 100%) !important;
+}
+
+/* ── Counter numbers ── */
+.counter-number,
+.count-number {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Gradient text on brand logo ── */
+.nav-brand span:first-child,
+.nav-brand strong,
+.navbar-brand .brand-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Active nav link — gradient text ── */
+.nav-link.active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+  background: var(--brand-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+
+
+/* ── Btn hover text color ── */
+.btn:hover .btn-title a,
+.btn:hover .btn-title span,
+.btn:focus .btn-title a,
+.btn:focus .btn-title span {
+  color: var(--accent-color) !important;
+}
+
+/* ── Section banner bg — DARK ONLY ── */
+[data-theme="dark"] .section-banner {
+  background-image: radial-gradient(
+    ellipse at bottom center,
+    #1F1F1F 0%,
+    #0E0E0E 50%
+  ) !important;
+}
+[data-theme="light"] .section-banner {
+  background-image: none !important;
+  background-color: #f2f3f8 !important;
+}
+
+/* ── Section banner inner glow — DARK ONLY ── */
+[data-theme="dark"] .section-banner .banner-layout-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 120%, #E0106E55 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+[data-theme="light"] .section-banner .banner-layout-wrapper::before {
+  background: none !important;
+}
+
+/* ── Homepage hero left glow — DARK ONLY ── */
+[data-theme="dark"] .section-hero .hero-left,
+[data-theme="dark"] .hero-banner-left,
+[data-theme="dark"] .section-banner-hero {
+  background-image: linear-gradient(
+    160deg,
+    #FF620022 0%,
+    #E0106E33 40%,
+    #8B12DF22 100%
+  ) !important;
+}
+[data-theme="light"] .section-hero .hero-left,
+[data-theme="light"] .hero-banner-left,
+[data-theme="light"] .section-banner-hero {
+  background-image: none !important;
+}
+
+/* ── All sections light mode ── */
+[data-theme="light"] .section,
+[data-theme="light"] .section-col,
+[data-theme="light"] .section-partner,
+[data-theme="light"] .section-guide,
+[data-theme="light"] .section-404,
+[data-theme="light"] .bg-footer,
+[data-theme="light"] .bg-footer-wrapper {
+  background-color: #f2f3f8 !important;
+  background-image: none !important;
+}
+
+/* ── Sub-headings in light mode ── */
+[data-theme="light"] .sub-heading {
+  color: rgba(0,0,0,0.55) !important;
+}
+[data-theme="light"] .sub-heading span {
+  color: rgba(0,0,0,0.55) !important;
+}
+
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE / MOBILE STYLES
+   Breakpoints: 1024px (tablet) | 768px (mobile) | 480px (small)
+   ══════════════════════════════════════════════ */
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  /* Hide centered nav links — they'll start overlapping the brand */
+  .nav-desktop-links {
+    display: none !important;
+  }
+  /* Show hamburger */
+  .nav-hamburger {
+    display: flex !important;
+  }
+  /* Hide CTA text label to save space */
+  .nav-cta-btn .btn-title {
+    display: none !important;
+  }
+  .nav-cta-btn .icon-circle {
+    margin: 0 !important;
+  }
+
+  /* Hero — tighten padding */
+  .hero-split-grid {
+    padding: 40px 0 32px !important;
+    gap: 32px !important;
+  }
+
+  /* Footer: 2-column */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Template section grids */
+  .banner-heading {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .banner-video-content,
+  .banner-content {
+    width: 100% !important;
   }
 }
 
-html {
-  height: 100%;
-}
+/* ── Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  /* Navbar: smaller width on mobile */
+  .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: flex !important;
+  }
+  /* Show icon only on CTA */
+  .nav-cta-btn .btn-title {
+    display: none !important;
+  }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  /* Hero: single column */
+  .hero-split-grid {
+    grid-template-columns: 1fr !important;
+    padding: 32px 0 24px !important;
+    gap: 32px !important;
+    min-height: unset !important;
+  }
 
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Hero image: show below text, smaller height */
+  .hero-image-col {
+    order: -1; /* show image ABOVE text on mobile */
+  }
+  .hero-image-col img {
+    height: 240px !important;
+    border-radius: 16px !important;
+  }
+  /* Hide floating badges on mobile */
+  .hero-image-col > div:not(:first-child) {
+    display: none !important;
+  }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+  /* Hero text */
+  .hero-split-grid h1 {
+    font-size: clamp(1.8rem, 7vw, 2.6rem) !important;
+  }
+  .hero-split-grid p {
+    font-size: 0.95rem !important;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  /* Banner video container padding */
+  .banner-video-container {
+    padding: 80px 16px !important;
+  }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  /* Section padding */
+  .section,
+  .section-col,
+  .section-partner,
+  .section-guide {
+    padding: 60px 20px !important;
+  }
+  .hero-container {
+    padding: 0 16px !important;
+  }
+  .section-banner {
+    padding: 0 16px !important;
+  }
+
+  /* Template grids → single column */
+  .banner-heading,
+  .d-flex.flex-xl-row {
+    flex-direction: column !important;
+  }
+  .banner-video-content,
+  .banner-content {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .text-xl-start {
+    text-align: center !important;
+  }
+  .justify-content-xl-start {
+    justify-content: center !important;
+  }
+
+  /* Section headings */
+  .title-heading,
+  .title-heading-banner {
+    font-size: clamp(1.8rem, 7vw, 2.8rem) !important;
+  }
+  h2.title-heading {
+    font-size: clamp(1.6rem, 6vw, 2.4rem) !important;
+  }
+
+  /* Cards row → wrap */
+  .d-flex.flex-xl-row.gspace-5 {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  /* Footer: single column */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Footer subscribe pill */
+  .footer-subscribe-row {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 16px !important;
+  }
+  .footer-subscribe-pill {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .footer-subscribe-pill input {
+    width: 100% !important;
+  }
+
+  /* Newsletter section */
+  .newsletter-wrapper,
+  .newsletter-layout {
+    padding: 32px 20px !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  /* Cards grid */
+  .card-chooseus,
+  .card-service {
+    margin-bottom: 0 !important;
+  }
+
+  /* Expertise layout */
+  .expertise-img-layout {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Counter cards row */
+  .card-expertise-counter {
+    flex-direction: column !important;
+  }
+
+  /* Testimonials  */
+  .card-testimonial {
+    width: 100% !important;
+  }
+
+  /* Case studies column */
+  .case-studies-col {
+    flex-direction: column !important;
+  }
+
+  /* Blog grid */
+  .blog-grid,
+  .section-blog .d-flex {
+    flex-direction: column !important;
+  }
+
+  /* Partner card row */
+  .card-partner {
+    flex-direction: column !important;
+    padding: 32px 24px !important;
+    text-align: center !important;
   }
 }
+
+/* ── Small phones (≤ 480px) ── */
+@media (max-width: 480px) {
+  /* Navbar: hide CTA button entirely */
+  .nav-cta-btn {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: flex !important;
+  }
+
+  /* Hero heading smaller */
+  .hero-split-grid h1 {
+    font-size: clamp(1.6rem, 8vw, 2.2rem) !important;
+  }
+
+  /* Section headings */
+  .title-heading,
+  .title-heading-banner {
+    font-size: clamp(1.5rem, 8vw, 2rem) !important;
+  }
+
+  /* Reduce vertical padding on sections */
+  .banner-video-container {
+    padding: 60px 12px !important;
+  }
+
+  /* Footer bottom row */
+  .footer-bottom-row {
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   TEMPLATE CSS FIXES
+   Override broken/missing-asset styles from app-styles.css
+   ══════════════════════════════════════════════════════════ */
+
+/* ── guide-banner: was 250px top padding + missing background image ── */
+.guide-banner {
+  background-image: none !important;
+  background: linear-gradient(135deg, #14002e 0%, #08001a 60%, #1a0035 100%) !important;
+  padding: 80px 20px 60px !important;
+  border-radius: 20px !important;
+}
+[data-theme="light"] .guide-banner {
+  background: linear-gradient(135deg, #f3e8ff 0%, #ffe4f0 100%) !important;
+}
+
+/* ── banner-layout-wrapper: remove missing grid-pattern image, replace with brand glow ── */
+.banner-layout-wrapper::before {
+  background-image: none !important;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(224, 16, 110, 0.12) 0%,
+    transparent 65%
+  ) !important;
+}
+
+/* ── case-studies cards: remove missing dummy-image backgrounds ── */
+.case-studies-content.local-business,
+.case-studies-content.saas-leads,
+.case-studies-content.ecommerce,
+.case-studies-content.startup-branding {
+  background-image: none !important;
+}
+
+/* ── cta-service-banner: remove missing background image ── */
+.cta-service-banner {
+  background-image: none !important;
+  background: linear-gradient(135deg, #14002e 0%, #08001a 100%) !important;
+}
+
+/* ── Inner-page FAQ: make text theme-aware ── */
+.section .faq-question {
+  color: var(--text-primary, #fff);
+}
+
