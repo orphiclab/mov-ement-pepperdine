@@ -12,12 +12,12 @@ export default function MerchantsPage() {
   const isDark = theme === 'dark';
 
   const benefits = [
-    { icon: '/Icon-7.png', title: 'Zero Cost to List', desc: 'Getting your business on The Movement is completely free. No setup fee, no monthly charge, no commissions on redemptions.' },
-    { icon: '/Icon-8.png', title: 'Nearly 10,000-Student Audience', desc: 'Get your deal in front of Pepperdine\'s entire student community — 3,553 undergrads on the Malibu campus plus thousands of graduate students across West LA, Calabasas, and Irvine.' },
-    { icon: '/Icon-5.png', title: 'Loyal, Recurring Customers', desc: 'Students who discover your business through The Movement come back — and they bring their friends.' },
-    { icon: '/Icon-6.png', title: 'Simple Merchant Dashboard', desc: 'Update your deal, add photos, change your offer, and track redemptions — all from a clean, mobile-friendly dashboard.' },
-    { icon: '/Icon-4.png', title: 'Verified Student Traffic', desc: 'Only verified Pepperdine students can redeem deals. No bots, no coupon abuse — just real, qualified customers.' },
-    { icon: '/icon-1.png', title: 'We Handle the Marketing', desc: 'We promote your deal through social media, campus outreach, email newsletters, and our website — so you don\'t have to.' },
+    { icon: '/Icon-7.png', title: 'Zero Cost to List', desc: 'Listing is completely free. No setup fee, no monthly charge, no commissions.' },
+    { icon: '/Icon-8.png', title: 'Nearly 10,000-Student Audience', desc: 'Reach Pepperdine\'s entire student community — 3,553 undergrads on the Malibu campus plus thousands more.' },
+    { icon: '/Icon-5.png', title: 'Loyal, Recurring Customers', desc: 'Students who discover your business come back — and they bring their friends.' },
+    { icon: '/Icon-6.png', title: 'Simple Merchant Dashboard', desc: 'Update your deal, add photos, and track redemptions from a clean, mobile-friendly dashboard.' },
+    { icon: '/Icon-4.png', title: 'Verified Student Traffic', desc: 'Only verified Pepperdine students can redeem deals. No bots, no coupon abuse.' },
+    { icon: '/icon-1.png', title: 'We Handle the Marketing', desc: 'We promote your deal through social media, campus outreach, and newsletters.' },
   ];
 
   const steps = [
@@ -68,8 +68,8 @@ export default function MerchantsPage() {
                 </h1>
 
                 <p data-gsap="fade-up"
-                  style={{ color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)', fontSize: '1.05rem', lineHeight: 1.75, margin: 0 }}>
-                  Join Malibu&apos;s fastest-growing student marketplace. List your business for free and connect with nearly 10,000 Pepperdine Waves across Malibu, West LA, Calabasas, and Irvine.
+                  style={{ color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.65)', fontSize: '1.15rem', lineHeight: 1.75, margin: 0 }}>
+                  Join Malibu&apos;s fastest-growing student marketplace. List your business for free and connect with nearly 10,000 Pepperdine Waves.
                 </p>
 
                 <div data-gsap="fade-up" style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
@@ -95,8 +95,8 @@ export default function MerchantsPage() {
                     ))}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, color: isDark ? '#fff' : '#0f0f1a', fontSize: '0.9rem' }}>Local Malibu Businesses</div>
-                    <div style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)', fontSize: '0.78rem' }}>Free to join • No contracts • No commissions</div>
+                    <div style={{ fontWeight: 700, color: isDark ? '#fff' : '#0f0f1a', fontSize: '0.95rem' }}>Local Malibu Businesses</div>
+                    <div style={{ color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.5)', fontSize: '0.85rem' }}>Free to join • No contracts • No commissions</div>
                   </div>
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function MerchantsPage() {
           <div className="d-flex flex-column flex-xl-row gspace-5">
             <div className="expertise-img-layout">
               <div className="image-container expertise-img" style={{ borderRadius: '24px', overflow: 'hidden' }}>
-                <img src="https://images.unsplash.com/photo-1621788959150-f4a9955e65e8?auto=format&fit=crop&w=600&q=80" alt="Malibu merchants" className="img-fluid" data-gsap="fade-up" />
+                <img src="https://images.unsplash.com/photo-1621788959150-f4a9955e65e8?auto=format&fit=crop&w=1200&q=85" alt="Malibu merchants" className="img-fluid" data-gsap="fade-up" />
                 <div className="expertise-layout">
                   <div className="d-flex flex-column">
                     <div className="card-expertise-wrapper">
@@ -164,7 +164,7 @@ export default function MerchantsPage() {
               <h2 className="title-heading " data-gsap="fade-right">
                 Grow Your Business with the Pepperdine Student Community
               </h2>
-              <p>The Movement connects your business to a captive, engaged audience of nearly 10,000 Pepperdine Waves across Southern California — with 3,553 undergraduates concentrated right on the Malibu campus. No advertising spend needed.</p>
+              <p>Connect your business to nearly 10,000 Pepperdine Waves — with 3,553 undergrads right on the Malibu campus. No advertising spend needed.</p>
               <div className="d-flex flex-column flex-md-row gspace-2">
                 <div className="expertise-list">
                   <h5>What You Get</h5>
@@ -321,7 +321,7 @@ export default function MerchantsPage() {
                   Host a Fundraiser Night — Give Back to the Community
                 </h3>
                 <p style={{ lineHeight: 1.8 }}>
-                  Partner with The Movement and Change the Cycle Inc. to host a student fundraiser night at your Malibu business. It&apos;s good for your brand, great for foot traffic, and life-changing for girls around the world who need access to education. Change the Cycle Inc. is a Calabasas-based nonprofit that empowers underserved girls through STEM education and job placement — in Los Angeles, Sri Lanka, Ghana, and Uganda. Local businesses that host fundraiser events get featured prominently on The Movement platform and in our campus outreach.
+                  Partner with The Movement and Change the Cycle Inc. to host a student fundraiser night at your business. Great for your brand, great for foot traffic, and life-changing for girls around the world who need access to education.
                 </p>
                 <Link href="#contact" className="btn btn-accent" style={{ marginTop: 8 }}>
                   <div className="btn-title"><span>Get Involved — Contact Us About Hosting</span></div>
@@ -349,13 +349,13 @@ export default function MerchantsPage() {
               {faqs.map((faq, idx) => (
                 <div key={idx} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <button onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    style={{ width: '100%', textAlign: 'left', padding: '18px 0', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'inherit', fontWeight: 600, fontSize: '1rem', color: '#fff' }}>
+                    style={{ width: '100%', textAlign: 'left', padding: '18px 0', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'inherit', fontWeight: 600, fontSize: '1.1rem', color: isDark ? '#fff' : '#0f0f1a' }}>
                     <span>{faq.q}</span>
                     <i className={`fa-solid ${openFaq === idx ? 'fa-minus accent-color' : 'fa-plus'}`} style={{ fontSize: '.85rem', flexShrink: 0, marginLeft: 12 }}></i>
                   </button>
                   {openFaq === idx && (
                     <div style={{ paddingBottom: 16 }}>
-                      <p style={{ margin: 0, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{faq.a}</p>
+                      <p style={{ margin: 0, color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.65)', lineHeight: 1.7, fontSize: '1.05rem' }}>{faq.a}</p>
                     </div>
                   )}
                 </div>

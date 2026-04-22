@@ -156,12 +156,24 @@ async function fetchTicketmaster(): Promise<EventItem[]> {
 }
 
 // ═══════════════════════════════════════════════════════════════════
-// EVENTBRITE API
+// EVENTBRITE API (Organization-based)
 // Docs: https://www.eventbrite.com/platform/api
-// Note: Eventbrite API may require a proxy for CORS in production.
-// For development, we attempt a direct call — if it fails (CORS),
-// we gracefully return empty and rely on Ticketmaster + local deals.
+//
+// The old /v3/events/search/ endpoint was deprecated (Dec 2019).
+// Current flow:
+//   1. GET /v3/users/me/organizations/  → discover organization ID
+//   2. GET /v3/organizations/{id}/events/?status=live,started
+//
+// Note: Browser calls may be blocked by CORS.  For a static-export
+//       site the call is attempted directly; if it fails we fall back
+//       gracefully to Ticketmaster + local deals.
 // ═══════════════════════════════════════════════════════════════════
+
+const EB_HEADERS = (token: string) => ({
+  'Authorization': `Bearer ${token}`,
+  'Content-Type': 'application/json',
+});
+
 async function fetchEventbrite(): Promise<EventItem[]> {
   const apiKey = process.env.NEXT_PUBLIC_EVENTBRITE_API_KEY;
   if (!apiKey) {
@@ -170,23 +182,43 @@ async function fetchEventbrite(): Promise<EventItem[]> {
   }
 
   try {
-    // Eventbrite v3 search endpoint
-    const url = new URL('https://www.eventbriteapi.com/v3/events/search/');
-    url.searchParams.set('location.latitude', PEPPERDINE_LAT);
-    url.searchParams.set('location.longitude', PEPPERDINE_LON);
-    url.searchParams.set('location.within', `${SEARCH_RADIUS}mi`);
-    url.searchParams.set('sort_by', 'date');
-    url.searchParams.set('expand', 'venue,logo');
-    url.searchParams.set('page_size', '20');
+    // ── Step 1: Discover the organization ID ────────────────────
+    console.log('[Events] Fetching Eventbrite organization...');
+    const orgRes = await fetch(
+      'https://www.eventbriteapi.com/v3/users/me/organizations/',
+      { headers: EB_HEADERS(apiKey), signal: AbortSignal.timeout(10000) },
+    );
 
-    console.log('[Events] Fetching from Eventbrite...');
-    const res = await fetch(url.toString(), {
-      headers: { 'Authorization': `Bearer ${apiKey}` },
+    if (!orgRes.ok) {
+      console.error(`[Events] Eventbrite /users/me/organizations returned ${orgRes.status}: ${orgRes.statusText}`);
+      return [];
+    }
+
+    const orgData = await orgRes.json();
+    const organizations = orgData.organizations || [];
+    if (organizations.length === 0) {
+      console.warn('[Events] No Eventbrite organizations found for this token');
+      return [];
+    }
+
+    const orgId = (organizations[0] as Record<string, unknown>).id as string;
+    console.log(`[Events] Using Eventbrite org ${orgId}`);
+
+    // ── Step 2: Fetch events from that organization ─────────────
+    const eventsUrl = new URL(`https://www.eventbriteapi.com/v3/organizations/${orgId}/events/`);
+    eventsUrl.searchParams.set('status', 'live,started');
+    eventsUrl.searchParams.set('order_by', 'start_asc');
+    eventsUrl.searchParams.set('expand', 'venue,logo');
+    eventsUrl.searchParams.set('page_size', '20');
+
+    console.log('[Events] Fetching events from Eventbrite...');
+    const res = await fetch(eventsUrl.toString(), {
+      headers: EB_HEADERS(apiKey),
       signal: AbortSignal.timeout(10000),
     });
 
     if (!res.ok) {
-      console.error(`[Events] Eventbrite returned ${res.status}: ${res.statusText}`);
+      console.error(`[Events] Eventbrite events returned ${res.status}: ${res.statusText}`);
       return [];
     }
 

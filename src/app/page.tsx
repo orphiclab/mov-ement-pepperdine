@@ -137,8 +137,8 @@ export default function HomePage() {
                 </h1>
 
                 <p data-gsap="fade-up"
-                  style={{ color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)', fontSize: '1.05rem', lineHeight: 1.75, margin: 0 }}>
-                  The Movement connects nearly 10,000 Pepperdine students — across Malibu, West LA, Calabasas, and Irvine — with exclusive discounts at local businesses. Free for students. Free to list for merchants.
+                  style={{ color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.65)', fontSize: '1.15rem', lineHeight: 1.75, margin: 0 }}>
+                  Exclusive discounts at 100+ local Malibu businesses — free for all Pepperdine students. Free to list for merchants.
                 </p>
 
                 <div data-gsap="fade-up" style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
@@ -157,8 +157,8 @@ export default function HomePage() {
                     ))}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, color: isDark ? '#fff' : '#0f0f1a', fontSize: '0.95rem' }}>~10,000 students across 4 campuses</div>
-                    <div style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)', fontSize: '0.8rem' }}>3,553 undergrads on the Malibu campus</div>
+                    <div style={{ fontWeight: 700, color: isDark ? '#fff' : '#0f0f1a', fontSize: '1rem' }}>~10,000 students across 4 campuses</div>
+                    <div style={{ color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.5)', fontSize: '0.9rem' }}>3,553 undergrads on the Malibu campus</div>
                   </div>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export default function HomePage() {
                   boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
                 }}>
                   <div style={{ fontSize: '1.4rem', fontWeight: 900, background: 'linear-gradient(135deg,#FF6200,#8B12DF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>100+</div>
-                  <div style={{ fontSize: '0.78rem', color: isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.55)', fontWeight: 600 }}>Local Businesses</div>
+                  <div style={{ fontSize: '0.85rem', color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.55)', fontWeight: 600 }}>Local Businesses</div>
                 </div>
 
                 {/* Floating badge — bottom right */}
@@ -221,8 +221,8 @@ export default function HomePage() {
                     <i className="fa-solid fa-tag" style={{ color: '#fff', fontSize: '0.8rem' }}></i>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.82rem', fontWeight: 700, color: isDark ? '#fff' : '#0f0f1a' }}>New Deal!</div>
-                    <div style={{ fontSize: '0.75rem', color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }}>Malibu Café — 20% off</div>
+                    <div style={{ fontSize: '0.88rem', fontWeight: 700, color: isDark ? '#fff' : '#0f0f1a' }}>New Deal!</div>
+                    <div style={{ fontSize: '0.82rem', color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.5)' }}>Malibu Café — 20% off</div>
                   </div>
                 </div>
               </div>
@@ -240,7 +240,7 @@ export default function HomePage() {
             {/* Image left */}
             <div className="expertise-img-layout">
               <div className="image-container expertise-img" style={{ borderRadius: '24px', overflow: 'hidden' }}>
-                <img src="https://images.unsplash.com/photo-1450125531260-73927b22d6f3?auto=format&fit=crop&w=600&q=80" alt="The Movement Pepperdine" className="img-fluid " data-gsap="fade-up" />
+                <img src="https://images.unsplash.com/photo-1450125531260-73927b22d6f3?auto=format&fit=crop&w=1200&q=85" alt="The Movement Pepperdine" className="img-fluid " data-gsap="fade-up" />
                 <div className="expertise-layout">
                   <div className="d-flex flex-column">
                     <div className="card-expertise-wrapper">
@@ -269,7 +269,7 @@ export default function HomePage() {
               <h2 className="title-heading " data-gsap="fade-right">
                 Student Deals. Local Businesses. One Platform.
               </h2>
-              <p>The Movement bridges Pepperdine Waves and the best local businesses in Malibu — serving a university community of nearly 10,000 students spread across Southern California, with the heart of campus life right here in Malibu.</p>
+              <p>The Movement bridges Pepperdine Waves and the best local businesses in Malibu — serving nearly 10,000 students with real deals near campus.</p>
               <div className="d-flex flex-column flex-md-row gspace-2">
                 <div className="expertise-list">
                   <h5>Who Benefits</h5>
@@ -277,9 +277,7 @@ export default function HomePage() {
                     <li><Link href="/students">Pepperdine Students (all majors)</Link></li>
                     <li><Link href="/merchants">Local Restaurants &amp; Cafés</Link></li>
                     <li><Link href="/merchants">Gyms &amp; Fitness Studios</Link></li>
-                    <li><Link href="/merchants">Retail &amp; Clothing Stores</Link></li>
-                    <li><Link href="/merchants">Salons &amp; Barbershops</Link></li>
-                    <li><Link href="/merchants">Entertainment &amp; Services</Link></li>
+                    <li><Link href="/merchants">Retail, Salons &amp; Services</Link></li>
                   </ul>
                 </div>
                 <div className="card card-expertise card-expertise-counter " data-gsap="fade-up">
@@ -310,7 +308,7 @@ export default function HomePage() {
               </div>
               <div className="col">
                 <div className="d-flex flex-column ps-xl-3 ps-0">
-                  <p>From neighborhood restaurants to gyms and boutiques — local merchants across Malibu trust The Movement to connect them with the Pepperdine student community.</p>
+                  <p>From dining to fitness, retail to services — all near campus.</p>
                 </div>
               </div>
             </div>
@@ -340,9 +338,9 @@ export default function HomePage() {
             <div className="col order-md-1 order-2">
               <div className="d-flex flex-column gspace-2">
                 {[
-                  { icon: '/Icon-2.png', title: 'Free for Every Student', desc: 'Every currently enrolled Pepperdine Wave gets 100% free access to all deals — no credit card, no catch.' },
-                  { icon: '/icon-1.png', title: 'Real Local Businesses Only', desc: 'Every merchant on The Movement is a real Malibu business near Pepperdine campus — no chains, no gimmicks.' },
-                  { icon: '/Icon-3.png', title: 'Deals that Actually Save You Money', desc: 'Our deals average 10–25% off — meaningful savings on food, fitness, retail, and services you use every week.' },
+                  { icon: '/Icon-2.png', title: 'Free for Every Student', desc: 'Every Pepperdine Wave gets 100% free access to all deals — no credit card, no catch.' },
+                  { icon: '/icon-1.png', title: 'Real Local Businesses Only', desc: 'Every merchant is a real Malibu business near campus — no chains, no gimmicks.' },
+                  { icon: '/Icon-3.png', title: 'Deals that Save You Money', desc: 'Our deals average 10–25% off on food, fitness, retail, and services you use weekly.' },
                 ].map((item, idx) => (
                   <div key={idx} className={`card card-chooseus animate-box animated animate__animated ${idx === 0 ? 'fast' : idx === 2 ? 'slow' : ''}`} data-animate="animate__fadeInLeft">
                     <div className="chooseus-icon-wrapper">
@@ -379,11 +377,11 @@ export default function HomePage() {
                     Your Community is Our Mission
                   </h2>
                   <p className="mb-0 " data-gsap="fade-up">
-                    We don&apos;t just list deals — we build real connections between Pepperdine students and the Malibu businesses that want to serve them. The Movement is community-first, always.
+                    We build real connections between Pepperdine students and the Malibu businesses that want to serve them. Community-first, always.
                   </p>
                 </div>
-                <div className="image-container">
-                  <img src="https://images.unsplash.com/photo-1630312022342-b803b7064bd0?auto=format&fit=crop&w=600&q=80" alt="The Movement Community" className="chooseus-img" />
+                <div className="image-container" style={{ background: 'linear-gradient(135deg, #FF6200 0%, #E0106E 50%, #8B12DF 100%)', padding: 4, borderRadius: 28 }}>
+                  <img src="https://images.unsplash.com/photo-1630312022342-b803b7064bd0?auto=format&fit=crop&w=1200&q=85" alt="The Movement Community" className="chooseus-img" style={{ borderRadius: 24 }} />
                   <div className="card-chooseus-cta-layout">
                     <div className="chooseus-cta-spacer"></div>
                     <div className="d-flex flex-column align-items-end">
@@ -415,7 +413,7 @@ export default function HomePage() {
               </div>
               <div className="d-flex flex-column gspace-2">
                 <h3 className="title-heading">Transform Your Malibu Experience!</h3>
-                <p>Whether you&apos;re a student looking to save or a business ready to grow — The Movement is your platform. Join free today and be part of something bigger.</p>
+                <p>Whether you&apos;re a student looking to save or a business ready to grow — The Movement is your platform. Join free today.</p>
               </div>
             </div>
           </div>
@@ -525,13 +523,13 @@ export default function HomePage() {
                     </div>
                     <div className="d-flex flex-column gspace-2">
                       <a href="#" className="case-studies-title"><h4>Riverside Café — Student Traffic Doubled</h4></a>
-                      <p>Foot traffic from Pepperdine students doubled in 2 months. The ROI has been incredible for a café our size — Sarah R., Owner.</p>
+                      <p>Student traffic doubled in 2 months. Incredible ROI for our café — Sarah R., Owner.</p>
                     </div>
                   </div>
                   <div className="card case-studies-content saas-leads " data-gsap="fade-up">
                     <div className="d-flex flex-column gspace-2">
-                      <a href="#" className="case-studies-title"><h4>James M. — Saving $200/Month as a CS Senior</h4></a>
-                      <p>I save $40–60 every single week using The Movement. The deals at restaurants and coffee shops around campus are genuinely incredible.</p>
+                      <a href="#" className="case-studies-title"><h4>James M. — Saving $200/Month</h4></a>
+                      <p>I save $40–60 every week using The Movement. The deals near campus are genuinely incredible.</p>
                     </div>
                     <div className="case-studies-component small align-self-end justify-content-end align-items-end">
                       {['Food', 'Coffee', 'Gym', 'Retail', 'Events', 'Services'].map(t => (
@@ -548,14 +546,14 @@ export default function HomePage() {
                       ))}
                     </div>
                     <div className="d-flex flex-column gspace-2">
-                      <a href="#" className="case-studies-title"><h4>Fit Life Gym — 6 Weeks Free for Movement Members</h4></a>
-                      <p>First 6 weeks free for Pepperdine students. No contract, cancel anytime. We saw 120+ student sign-ups in the first month alone.</p>
+                      <a href="#" className="case-studies-title"><h4>Fit Life Gym — 6 Weeks Free for Members</h4></a>
+                      <p>First 6 weeks free for Pepperdine students. 120+ sign-ups in the first month alone.</p>
                     </div>
                   </div>
                   <div className="card case-studies-content startup-branding " data-gsap="fade-up">
                     <div className="d-flex flex-column gspace-2">
-                      <a href="#" className="case-studies-title"><h4>Style Local Boutique — 25% Off for Wave Members</h4></a>
-                      <p>Spring styles just dropped. Pepperdine students get 25% off everything in store — exclusive to The Movement members only.</p>
+                      <a href="#" className="case-studies-title"><h4>Style Local — 25% Off for Waves</h4></a>
+                      <p>Spring styles just dropped. 25% off everything in store — exclusive to Movement members.</p>
                     </div>
                     <div className="case-studies-component large align-self-start justify-content-start align-items-start">
                       {['Fashion', 'Style', 'Local', 'Student', 'Savings', 'Pepperdine'].map(t => (
@@ -640,10 +638,10 @@ export default function HomePage() {
               <div className="overflow-hidden">
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
                   {[
-                    { name: 'James M.', role: 'Senior, Computer Science', quote: 'I save $40–60 every single week using The Movement. The deals at restaurants and coffee shops around campus are genuinely incredible.', img: 'https://i.pravatar.cc/150?u=James' },
-                    { name: 'Sarah R.', role: 'Owner, Riverside Café', quote: 'Our foot traffic from Pepperdine students literally doubled in two months. The onboarding was effortless and the ROI has been incredible for a café our size.', img: 'https://i.pravatar.cc/150?u=Sarah' },
-                    { name: 'Amara L.', role: 'Junior, Marketing', quote: 'Every Wave needs The Movement. New deals pop up constantly and it\'s helped me discover so many great local spots I never knew existed.', img: 'https://i.pravatar.cc/150?u=Amara' },
-                    { name: 'Marcus K.', role: 'Owner, Wave Cuts', quote: 'The students that come in through The Movement are loyal. They keep coming back and they bring their friends. Best decision I made all year.', img: 'https://i.pravatar.cc/150?u=Marcus' },
+                    { name: 'James M.', role: 'Senior, CS', quote: 'I save $40–60 every week. The deals near campus are genuinely incredible.', img: 'https://i.pravatar.cc/150?u=James' },
+                    { name: 'Sarah R.', role: 'Owner, Riverside Café', quote: 'Our student foot traffic doubled in two months. The ROI has been incredible.', img: 'https://i.pravatar.cc/150?u=Sarah' },
+                    { name: 'Amara L.', role: 'Junior, Marketing', quote: 'Every Wave needs The Movement. New deals pop up constantly — I\'ve discovered so many great local spots.', img: 'https://i.pravatar.cc/150?u=Amara' },
+                    { name: 'Marcus K.', role: 'Owner, Wave Cuts', quote: 'Students from The Movement are loyal. They keep coming back and bring their friends.', img: 'https://i.pravatar.cc/150?u=Marcus' },
                   ].map(t => (
                     <div key={t.name} className="card card-testimonial " data-gsap="fade-up">
                       <div className="stars">
@@ -750,7 +748,7 @@ export default function HomePage() {
 
             <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'center' }}>
               <p style={{ lineHeight: 1.8, marginBottom: 36 }}>
-                While you save on food, fitness, and fun — a portion of The Movement&apos;s community impact goes toward something bigger. Change the Cycle Inc. is dedicated to breaking the cycle of poverty for underserved girls and young women through education, job training, and financial support — in Los Angeles, Sri Lanka, Ghana, Uganda, and beyond. As a Pepperdine Wave, you have the power to make a real difference simply by being part of The Movement community.
+                While you save on food, fitness, and fun — a portion of The Movement&apos;s community impact goes toward something bigger. Change the Cycle Inc. empowers underserved girls and young women through STEM education, job training, and financial support — in Los Angeles, Sri Lanka, Ghana, Uganda, and beyond.
               </p>
 
               {/* Stat tiles */}
@@ -771,7 +769,7 @@ export default function HomePage() {
                   }}>
                     <div style={{ fontSize: '2rem', marginBottom: 12 }}>{tile.icon}</div>
                     <h5 style={{ fontWeight: 700, marginBottom: 8, background: 'linear-gradient(135deg,#FF6200,#8B12DF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{tile.label}</h5>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.7 }}>{tile.value}</p>
+                    <p style={{ margin: 0, fontSize: '0.95rem', opacity: 0.8 }}>{tile.value}</p>
                   </div>
                 ))}
               </div>
@@ -821,13 +819,13 @@ export default function HomePage() {
               {faqs.map((faq, idx) => (
                 <div key={idx} style={{ borderBottom: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}` }}>
                   <button onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    style={{ width: '100%', textAlign: 'left', padding: '18px 0', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'inherit', fontWeight: 600, fontSize: '1rem', color: isDark ? '#fff' : '#0f0f1a' }}>
+                    style={{ width: '100%', textAlign: 'left', padding: '18px 0', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'inherit', fontWeight: 600, fontSize: '1.1rem', color: isDark ? '#fff' : '#0f0f1a' }}>
                     <span>{faq.q}</span>
                     <i className={`fa-solid ${openFaq === idx ? 'fa-minus accent-color' : 'fa-plus'}`} style={{ fontSize: '.85rem', flexShrink: 0, marginLeft: 12, color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.4)' }}></i>
                   </button>
                   {openFaq === idx && (
                     <div style={{ paddingBottom: 16 }}>
-                      <p style={{ margin: 0, color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.65)', lineHeight: 1.7 }}>{faq.a}</p>
+                      <p style={{ margin: 0, color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.65)', lineHeight: 1.7, fontSize: '1.05rem' }}>{faq.a}</p>
                     </div>
                   )}
                 </div>
@@ -853,7 +851,7 @@ export default function HomePage() {
                   <h3 className="title-heading" style={{ color: isDark ? '#fff' : '#0f0f1a', WebkitTextFillColor: isDark ? '#fff' : '#0f0f1a' }}>
                     Stay in the Loop with The Movement
                   </h3>
-                  <p style={{ color: isDark ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,0.6)' }}>
+                  <p style={{ color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.6)' }}>
                     New deals added every week. Subscribe for updates on the latest offers, new merchants, and campus events — delivered straight to your inbox.
                   </p>
                 </div>
@@ -915,8 +913,8 @@ export default function HomePage() {
             </div>
             <div className="row row-cols-md-2 row-cols-1 grid-spacer-3">
               {[
-                { date: 'Apr 18, 2025', cat: 'Event', title: 'Pepperdine Spring Block Party Night', desc: 'The Movement is partnering with local venues to throw the biggest student night of the semester. Exclusive entry deals for Waves.', img: 'https://images.unsplash.com/photo-1688602082765-4619f9b6f844?auto=format&fit=crop&w=600&q=80' },
-                { date: 'Ends Apr 30', cat: 'Deal', title: "Wave's Pizza — Finals Week 30% Off", desc: "Fuel your study sessions during finals week with the best pizza near campus. Show your Movement pass at the counter.", img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80' },
+                { date: 'Apr 18, 2025', cat: 'Event', title: 'Pepperdine Spring Block Party Night', desc: 'The Movement is partnering with local venues to throw the biggest student night of the semester. Exclusive entry deals for Waves.', img: 'https://images.unsplash.com/photo-1688602082765-4619f9b6f844?auto=format&fit=crop&w=1200&q=85' },
+                { date: 'Ends Apr 30', cat: 'Deal', title: "Wave's Pizza — Finals Week 30% Off", desc: "Fuel your study sessions during finals week with the best pizza near campus. Show your Movement pass at the counter.", img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=85' },
               ].map(blog => (
                 <div className="col" key={blog.title}>
                   <div className="card card-blog " data-gsap="fade-up">

@@ -9,12 +9,12 @@ export default function StudentsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const deals = [
-    { icon: '/Icon-7.png', title: '30% Off at Riverside Café', desc: 'Show your Movement pass at any Riverside Café location near campus and get 30% off your entire order Monday–Friday.' },
-    { icon: '/Icon-8.png', title: 'Fit Life Gym — 6 Weeks Free', desc: 'New Pepperdine student members get their first 6 weeks at Fit Life Gym completely free. No contract, cancel anytime.' },
-    { icon: '/Icon-5.png', title: 'Style Local — 25% Off Everything', desc: 'Pepperdine Waves save 25% on all in-store purchases at Style Local Boutique. New arrivals every week.' },
-    { icon: '/Icon-6.png', title: 'Wave Cuts — $5 Off Any Cut', desc: 'Show your student pass and save $5 on any haircut at Wave Cuts — Malibu\'s favorite student barbershop.' },
-    { icon: '/Icon-4.png', title: 'Campus Eats — BOGO Lunch', desc: 'Buy one lunch, get one free at Campus Eats every Tuesday and Thursday. Perfect for study buddies.' },
-    { icon: '/icon-1.png', title: 'Game Zone — 2 Hours for $1', desc: 'Pepperdine students get 2 hours of gaming for just $1 on weekday afternoons. Perfect for stress relief between classes.' },
+    { icon: '/Icon-7.png', title: '30% Off at Riverside Café', desc: 'Show your Movement pass and get 30% off your entire order Monday–Friday.' },
+    { icon: '/Icon-8.png', title: 'Fit Life Gym — 6 Weeks Free', desc: 'First 6 weeks completely free for new student members. No contract.' },
+    { icon: '/Icon-5.png', title: 'Style Local — 25% Off Everything', desc: '25% off all in-store purchases. New arrivals every week.' },
+    { icon: '/Icon-6.png', title: 'Wave Cuts — $5 Off Any Cut', desc: 'Save $5 on any haircut at Malibu\'s favorite student barbershop.' },
+    { icon: '/Icon-4.png', title: 'Campus Eats — BOGO Lunch', desc: 'Buy one lunch, get one free every Tuesday and Thursday.' },
+    { icon: '/icon-1.png', title: 'Game Zone — 2 Hours for $1', desc: '2 hours of gaming for $1 on weekday afternoons. Perfect stress relief.' },
   ];
 
   const steps = [
@@ -45,7 +45,7 @@ export default function StudentsPage() {
           <div className="d-flex flex-column flex-xl-row gspace-5">
             <div className="expertise-img-layout">
               <div className="image-container expertise-img" style={{ borderRadius: '24px', overflow: 'hidden' }}>
-                <img src="https://images.unsplash.com/photo-1688602082765-4619f9b6f844?auto=format&fit=crop&w=600&q=80" alt="Pepperdine Students" className="img-fluid " data-gsap="fade-up" />
+                <img src="https://images.unsplash.com/photo-1688602082765-4619f9b6f844?auto=format&fit=crop&w=1200&q=85" alt="Pepperdine Students" className="img-fluid " data-gsap="fade-up" />
                 <div className="expertise-layout">
                   <div className="d-flex flex-column">
                     <div className="card-expertise-wrapper">
@@ -72,7 +72,7 @@ export default function StudentsPage() {
               <h2 className="title-heading " data-gsap="fade-right">
                 Exclusive Deals Around Pepperdine Campus — Always Free
               </h2>
-              <p>The Movement gives every Pepperdine student — whether you&apos;re an undergrad on the Malibu campus or a grad student in West LA, Calabasas, or Irvine — instant access to exclusive discounts at local businesses near campus. No cost, no catch.</p>
+              <p>Every Pepperdine student — undergrad or grad, Malibu or satellite campus — gets instant access to exclusive discounts at local businesses near campus. No cost, no catch.</p>
               <div className="d-flex flex-column flex-md-row gspace-2">
                 <div className="expertise-list">
                   <h5>What You Get</h5>
@@ -231,7 +231,7 @@ export default function StudentsPage() {
                   Save More. Give Back. Be the Change.
                 </h3>
                 <p style={{ lineHeight: 1.8 }}>
-                  Every time you use The Movement, you&apos;re part of a community that believes in purpose-driven living. We partner with Change the Cycle Inc. — a nonprofit founded right here in Calabasas — to support girls and young women in underserved communities who have big dreams but limited means. Keep an eye on The Movement for upcoming student fundraiser events at local Malibu businesses. Every dollar raised goes toward STEM scholarships and career support for girls who need it most.
+                  Every time you use The Movement, you&apos;re part of a community that gives back. We partner with Change the Cycle Inc. — a Calabasas-based nonprofit — to support STEM scholarships and career support for underserved girls worldwide.
                 </p>
                 <Link href="/happening" className="btn btn-accent" style={{ marginTop: 8 }}>
                   <div className="btn-title"><span>Find Upcoming Fundraisers</span></div>
@@ -259,13 +259,13 @@ export default function StudentsPage() {
               {faqs.map((faq, idx) => (
                 <div key={idx} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <button onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    style={{ width: '100%', textAlign: 'left', padding: '18px 0', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'inherit', fontWeight: 600, fontSize: '1rem', color: '#fff' }}>
+                    style={{ width: '100%', textAlign: 'left', padding: '18px 0', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'inherit', fontWeight: 600, fontSize: '1.1rem', color: '#fff' }}>
                     <span>{faq.q}</span>
                     <i className={`fa-solid ${openFaq === idx ? 'fa-minus accent-color' : 'fa-plus'}`} style={{ fontSize: '.85rem', flexShrink: 0, marginLeft: 12 }}></i>
                   </button>
                   {openFaq === idx && (
                     <div style={{ paddingBottom: 16 }}>
-                      <p style={{ margin: 0, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{faq.a}</p>
+                      <p style={{ margin: 0, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, fontSize: '1.05rem' }}>{faq.a}</p>
                     </div>
                   )}
                 </div>

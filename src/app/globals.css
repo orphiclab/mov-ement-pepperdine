@@ -6,17 +6,35 @@
 * { box-sizing: border-box; }
 img { max-width: 100%; }
 a { color: inherit; text-decoration: none; }
-body { margin: 0; padding: 0; }
+body { margin: 0; padding: 0; font-size: 16px; }
+
+/* ── Global readability: larger text (override template gray) ── */
+p, li, .text-color {
+  font-size: 1.1rem !important;
+  line-height: 1.8 !important;
+}
+/* Dark mode: force near-white text */
+:root p, :root li, :root .text-color,
+[data-theme="dark"] p, [data-theme="dark"] li, [data-theme="dark"] .text-color {
+  color: rgba(255,255,255,0.9) !important;
+}
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
 
 /* ══ DARK MODE (default) ══ */
 :root,
 [data-theme="dark"] {
+  /* Override template's gray --text-color (#8B8B8B) with near-white */
+  --text-color: rgba(255,255,255,0.9);
+  --primary: #ffffff;
+
   --bg-primary: #0B0014;
   --bg-secondary: #0E0E1A;
   --surface: rgba(255,255,255,0.05);
   --text-primary: #ffffff;
-  --text-secondary: rgba(255,255,255,0.65);
-  --text-muted: #9CA3AF;
+  --text-secondary: rgba(255,255,255,0.9);
+  --text-muted: #B0B8C4;
   --border: rgba(255,255,255,0.1);
   --card-bg: rgba(255,255,255,0.04);
   --nav-bg: rgba(10, 0, 30, 0.80);
@@ -48,6 +66,11 @@ body { margin: 0; padding: 0; }
   --accent-color-5: rgba(0,0,0,0.08) !important;
 
   color-scheme: light;
+}
+
+/* Light mode: force dark text on paragraphs */
+[data-theme="light"] p, [data-theme="light"] li, [data-theme="light"] .text-color {
+  color: rgba(0,0,0,0.7) !important;
 }
 
 /* Force body background and text in light mode */
@@ -153,7 +176,7 @@ footer h6 {
 }
 [data-theme="dark"] footer p,
 [data-theme="dark"] footer span {
-  color: #9CA3AF !important;
+  color: rgba(255,255,255,0.75) !important;
 }
 [data-theme="dark"] footer h6 {
   color: #ffffff !important;
@@ -510,7 +533,7 @@ i.fa-circle-check {
     font-size: clamp(1.8rem, 7vw, 2.6rem) !important;
   }
   .hero-split-grid p {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
   }
 
   /* Banner video container padding */
@@ -631,6 +654,94 @@ i.fa-circle-check {
     flex-direction: column !important;
     padding: 32px 24px !important;
     text-align: center !important;
+  }
+
+  /* ═══ MOBILE TEXT VISIBILITY FIXES (client feedback) ═══ */
+
+  /* Expertise text: ensure it doesn't clip */
+  .expertise-title {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  .expertise-title p,
+  .expertise-list {
+    font-size: 1rem !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+  .expertise-img-layout .expertise-layout {
+    position: relative !important;
+  }
+
+  /* Case studies — force readable layout */
+  .case-studies-content {
+    padding: 24px 20px !important;
+    min-height: unset !important;
+  }
+  .case-studies-content h4 {
+    font-size: 1.15rem !important;
+  }
+  .case-studies-content p {
+    font-size: 1rem !important;
+    color: rgba(255,255,255,0.85) !important;
+  }
+  .d-flex.flex-xl-row.gspace-2 {
+    flex-direction: column !important;
+  }
+
+  /* Testimonial cards — no min-height, full width */
+  .card-testimonial {
+    min-height: unset !important;
+    padding: 24px 20px !important;
+  }
+  .testimonial-description {
+    font-size: 1rem !important;
+  }
+
+  /* CSR stat tiles — single column */
+  div[style*="grid-template-columns: repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ensure hero-container text doesn't clip */
+  .hero-container {
+    overflow: visible !important;
+  }
+
+  /* Form inputs — prevent iOS zoom on focus */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+
+  /* Digital process steps — full width */
+  .digital-process-step {
+    padding: 20px !important;
+  }
+  .digital-process-step p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Partner card text */
+  .card-partner p {
+    font-size: 1rem !important;
+  }
+
+  /* Guide banner text */
+  .guide-content p {
+    font-size: 1rem !important;
+  }
+
+  /* Check-list items */
+  .check-list li {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Card descriptions */
+  .card-service p,
+  .card-chooseus p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
   }
 }
 

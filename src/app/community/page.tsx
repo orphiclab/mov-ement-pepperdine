@@ -10,10 +10,10 @@ export default function CommunityPage() {
   const isDark = theme === 'dark';
 
   const ways = [
-    { icon: '💰', title: 'Donate', desc: 'Contribute directly to Change the Cycle Inc. to fund STEM scholarships, educational resources, and career placement programs for underserved girls.' },
-    { icon: '🤝', title: 'Volunteer', desc: 'Offer your time and skills. Pepperdine students can mentor, tutor, or help organize community events through the platform.' },
-    { icon: '🎉', title: 'Attend a Fundraiser', desc: 'Join local fundraiser events at participating Malibu merchants. Every dollar raised goes toward education and career support.' },
-    { icon: '📱', title: 'Share on Social', desc: 'Amplify the mission by sharing Change the Cycle\'s work with your Pepperdine community. Every share raises awareness.' },
+    { icon: '💰', title: 'Donate', desc: 'Contribute directly to fund STEM scholarships and career programs for underserved girls.' },
+    { icon: '🤝', title: 'Volunteer', desc: 'Offer your time — mentor, tutor, or help organize community events.' },
+    { icon: '🎉', title: 'Attend a Fundraiser', desc: 'Join local fundraiser events at Malibu merchants. Every dollar supports education.' },
+    { icon: '📱', title: 'Share on Social', desc: 'Amplify the mission by sharing with your Pepperdine community.' },
   ];
 
   const countries = [
@@ -42,7 +42,7 @@ export default function CommunityPage() {
                 The Movement is More Than Deals
               </h2>
               <p style={{ maxWidth: 720, margin: '0 auto', lineHeight: 1.8 }}>
-                While students save on food, fitness, and fun — The Movement channels community energy toward something bigger. We&apos;re proud to partner with Change the Cycle Inc. to empower underserved girls and young women worldwide.
+                While students save on food, fitness, and fun — The Movement channels community energy toward something bigger. We partner with Change the Cycle Inc. to empower underserved girls and young women worldwide.
               </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function CommunityPage() {
             <div className="expertise-img-layout">
               <div className="image-container expertise-img" style={{ borderRadius: 24, overflow: 'hidden' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=85"
                   alt="Change the Cycle Inc."
                   className="img-fluid"
                   data-gsap="fade-up"
@@ -90,8 +90,8 @@ export default function CommunityPage() {
               <h2 className="title-heading" data-gsap="fade-right">
                 Empowering Girls Through STEM Education
               </h2>
-              <p>Change the Cycle Inc. is a Calabasas-based nonprofit dedicated to empowering underrepresented and underserved girls and young women worldwide, facilitating their journey from educational access to sustainable employment.</p>
-              <p>Their focus areas include STEM education, scholarships, job placement, and financial assistance — reaching communities in Los Angeles, Sri Lanka, Ghana, Uganda, and Papua New Guinea.</p>
+              <p>Change the Cycle Inc. is a Calabasas-based nonprofit empowering underrepresented girls and young women worldwide — from educational access to sustainable employment.</p>
+              <p>Their focus: STEM education, scholarships, job placement, and financial assistance across LA, Sri Lanka, Ghana, Uganda, and Papua New Guinea.</p>
               <div className="d-flex flex-column flex-md-row gspace-2">
                 <div className="expertise-list">
                   <h5>Key Programs</h5>

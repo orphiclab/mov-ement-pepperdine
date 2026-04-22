@@ -25,7 +25,7 @@ export default function AboutPage() {
           <div className="d-flex flex-column flex-xl-row gspace-5">
             <div className="about-img-layout">
               <div className="image-container about-img">
-                <img src="https://images.unsplash.com/photo-1630312022342-b803b7064bd0?auto=format&fit=crop&w=600&q=80" alt="The Movement Pepperdine" className="img-fluid " data-gsap="fade-up" />
+                <img src="https://images.unsplash.com/photo-1630312022342-b803b7064bd0?auto=format&fit=crop&w=1200&q=85" alt="The Movement Pepperdine" className="img-fluid " data-gsap="fade-up" />
                 <div className="about-layout">
                   <div className="d-flex flex-column">
                     <div className="card-about-wrapper">
@@ -129,7 +129,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="image-container">
-                  <img src="https://images.unsplash.com/photo-1450125531260-73927b22d6f3?auto=format&fit=crop&w=600&q=80" alt="The Movement Values" className="chooseus-img" />
+                  <img src="https://images.unsplash.com/photo-1450125531260-73927b22d6f3?auto=format&fit=crop&w=1200&q=85" alt="The Movement Values" className="chooseus-img" />
                   <div className="card-chooseus-cta-layout">
                     <div className="chooseus-cta-spacer"></div>
                     <div className="d-flex flex-column align-items-end">

@@ -6,12 +6,12 @@ import { PageBanner, PartnerSection, GuideBand } from '@/components/PageComponen
 
 export default function ArlingtonPage() {
   const categories = [
-    { icon: '/Icon-7.png', title: 'Dining & Cafés', desc: 'From quick bites between classes to sit-down dinners — 30+ restaurants near Pepperdine offering exclusive Wave discounts.' },
-    { icon: '/Icon-8.png', title: 'Fitness & Wellness', desc: 'Gyms, yoga studios, and wellness centers near campus giving Pepperdine students heavily discounted memberships and first-month-free deals.' },
-    { icon: '/Icon-5.png', title: 'Retail & Fashion', desc: 'Local boutiques and clothing stores offering 15–30% off for Pepperdine students on everything from everyday basics to standout styles.' },
-    { icon: '/Icon-6.png', title: 'Salons & Barbershops', desc: 'Look your best for less. Haircuts, color, nails, and grooming services at student-exclusive rates near campus.' },
-    { icon: '/Icon-4.png', title: 'Entertainment & Fun', desc: 'Game zones, escape rooms, bowling, and movie nights — local entertainment venues where Pepperdine students always pay less.' },
-    { icon: '/icon-1.png', title: 'Professional Services', desc: 'Tutoring, printing, tech repair, and more — local service providers who understand what Waves need and price accordingly.' },
+    { icon: '/Icon-7.png', title: 'Dining & Cafés', desc: '30+ restaurants near Pepperdine offering exclusive Wave discounts on meals and drinks.' },
+    { icon: '/Icon-8.png', title: 'Fitness & Wellness', desc: 'Gyms and wellness centers offering students discounted memberships and free trial periods.' },
+    { icon: '/Icon-5.png', title: 'Retail & Fashion', desc: 'Local boutiques offering 15–30% off for Pepperdine students on everyday basics and standout styles.' },
+    { icon: '/Icon-6.png', title: 'Salons & Barbershops', desc: 'Haircuts, nails, and grooming at student-exclusive rates near campus.' },
+    { icon: '/Icon-4.png', title: 'Entertainment & Fun', desc: 'Game zones, escape rooms, and movie nights where Waves always pay less.' },
+    { icon: '/icon-1.png', title: 'Professional Services', desc: 'Tutoring, printing, tech repair, and more at student-friendly prices.' },
   ];
 
   return (
@@ -25,7 +25,7 @@ export default function ArlingtonPage() {
           <div className="d-flex flex-column flex-xl-row gspace-5">
             <div className="expertise-img-layout">
               <div className="image-container expertise-img" style={{ borderRadius: '24px', overflow: 'hidden' }}>
-                <img src="https://images.unsplash.com/photo-1558544818-be525037d55f?auto=format&fit=crop&w=600&q=80" alt="Malibu CA" className="img-fluid " data-gsap="fade-up" />
+                <img src="https://images.unsplash.com/photo-1558544818-be525037d55f?auto=format&fit=crop&w=1200&q=85" alt="Malibu CA" className="img-fluid " data-gsap="fade-up" />
                 <div className="expertise-layout">
                   <div className="d-flex flex-column">
                     <div className="card-expertise-wrapper">
@@ -52,20 +52,17 @@ export default function ArlingtonPage() {
               <h2 className="title-heading " data-gsap="fade-right">
                 The Pepperdine Wave City
               </h2>
-              <p>With 3,553 undergraduates living on Pepperdine&apos;s stunning 830-acre Malibu campus — and nearly 10,000 students enrolled across the full university — this is one of the most captive and engaged college communities in Southern California. The Movement exists to make Malibu&apos;s vibrant local business scene fully accessible to every Wave.</p>
-              <p>Whether you&apos;re looking for the best lunch spot near the Engineering Building or a gym within walking distance of the Wave Activities Center, The Movement has you covered.</p>
+              <p>With 3,553 undergraduates on Pepperdine&apos;s 830-acre Malibu campus and nearly 10,000 students enrolled university-wide, this is one of the most engaged college communities in Southern California.</p>
+              <p>The Movement makes Malibu&apos;s local business scene fully accessible to every Wave.</p>
               <div className="d-flex flex-column flex-md-row gspace-2">
                 <div className="expertise-list">
                   <h5>Campus & City Facts</h5>
                   <ul className="check-list">
-                    <li><a href="#">~3,553 undergrads on the Malibu campus (fall 2024)</a></li>
-                    <li><a href="#">Nearly 10,000 students across all Pepperdine campuses</a></li>
-                    <li><a href="#">830-acre campus overlooking the Pacific Ocean</a></li>
-                    <li><a href="#">29 miles from Downtown Los Angeles</a></li>
+                    <li><a href="#">~3,553 undergrads on the Malibu campus</a></li>
+                    <li><a href="#">Nearly 10,000 students across all campuses</a></li>
+                    <li><a href="#">830-acre campus overlooking the Pacific</a></li>
                     <li><a href="#">61% of undergrads live on or near campus</a></li>
-                    <li><a href="#">12:1 student-to-faculty ratio</a></li>
                     <li><a href="#">300+ days of sunshine per year</a></li>
-                    <li><a href="#">Home of the Waves</a></li>
                   </ul>
                 </div>
                 <div className="card card-expertise card-expertise-counter " data-gsap="fade-up">
@@ -182,11 +179,11 @@ export default function ArlingtonPage() {
                     Tap Into the Pepperdine Student Economy
                   </h2>
                   <p className="mb-0 " data-gsap="fade-up">
-                    Nearly 3,500 students are on the Malibu campus right now, looking for great local businesses. As part of a university community approaching 10,000 strong, Pepperdine Waves are an economically active, loyal, and word-of-mouth-driven customer base. The Movement makes sure they find your business first.
+                    Nearly 3,500 students are on the Malibu campus right now. Pepperdine Waves are loyal, word-of-mouth-driven customers. The Movement makes sure they find your business first.
                   </p>
                 </div>
                 <div className="image-container" style={{ borderRadius: '24px', overflow: 'hidden' }}>
-                  <img src="https://images.unsplash.com/photo-1621788959150-f4a9955e65e8?auto=format&fit=crop&w=600&q=80" alt="Malibu CA merchants" className="chooseus-img" />
+                  <img src="https://images.unsplash.com/photo-1621788959150-f4a9955e65e8?auto=format&fit=crop&w=1200&q=85" alt="Malibu CA merchants" className="chooseus-img" />
                   <div className="card-chooseus-cta-layout">
                     <div className="chooseus-cta-spacer"></div>
                     <div className="d-flex flex-column align-items-end">
